@@ -36,7 +36,7 @@ Route::get('shops', 'ShopsController@index')->name('shops.index');
 Route::get('shops/create', 'ShopsController@create')->name('shops.create');
 
 // edit: 更新用のフォームページ
-Route::get('messages/{id}/edit', 'MessagesController@edit')->name('shops.edit');
+Route::get('shops/{id}/edit', 'ShopsController@edit')->name('shops.edit');
 
 
 
