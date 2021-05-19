@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Shop;    // Shopモデルを参照する
+
 class ShopsController extends Controller
 {
     /**
@@ -11,10 +13,17 @@ class ShopsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-     // getでshops/にアクセスされた場合の「一覧表示処理」
+    // getでshops/にアクセスされた場合の「一覧表示処理」
     public function index()
     {
-        //
+         // お店情報（Shopモデル）一覧を取得。$shopsに入ったデータをviewに渡す。
+        $shops = Shop::all();
+
+        // お店情報一覧ビューでそれを表示（Controllerから特定のViewを呼び出す）
+        return view('shops.index', [
+            //shopsという箱の中にshopsという値が入っている。
+            'shops' => $shops,
+        ]);
     }
 
     /**
