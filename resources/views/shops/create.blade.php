@@ -18,15 +18,18 @@
                     {{--第二引数はテキストボックスに入れておきたい固定の初期値（不要なのでnull）--}}
                     {{--第三引数はタグの属性情報を配列形式で指定--}}
                     {!! Form::text('category', null, ['class' => 'form-control']) !!}
-                    
+                </div>
+                <div class="form-group">
                     {{--店名のフォーム--}}
                     {!! Form::label('shop_name', '店名') !!}
                     {!! Form::text('shop_name', null, ['class' => 'form-control']) !!}
-                    
+                </div>
+                <div class="form-group">
                     {{--所在地のフォーム--}}
                     {!! Form::label('palce', '所在地') !!}
                     {!! Form::text('place', null, ['class' => 'form-control']) !!}
-                    
+                </div>
+                <div class="form-group">
                     {{--その他のフォーム--}}
                     {!! Form::label('other', 'その他（感想やメニュー内容など）') !!}
                     {!! Form::text('other', null, ['class' => 'form-control']) !!}
