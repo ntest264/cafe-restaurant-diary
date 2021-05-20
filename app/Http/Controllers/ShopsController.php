@@ -136,6 +136,12 @@ class ShopsController extends Controller
     // deleteでshops/（任意のid）にアクセスされた場合の「削除処理」
     public function destroy($id)
     {
-        //
+        // idの値で登録情報を検索して取得
+        $shop = Shop::findOrFail($id);
+        // 登録情報を削除
+        $shop->delete();
+
+        // トップページへリダイレクトさせる
+        return redirect('/');
     }
 }
