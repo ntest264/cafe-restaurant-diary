@@ -15,6 +15,7 @@
 //indexアクションは、 / にアクセスしたときと、 /shops にアクセスした両方で同じルーティングが設定されたことになる。
 Route::get('/', 'ShopsController@index');
 
+
 //あえてresourceは使わない：エラーが出たときにたどりやすいようにするため。
 // 登録店舗の個別詳細・編集ページ表示（これは編集ページになれる？）
 Route::get('shops/{id}', 'ShopsController@show');
