@@ -13,14 +13,21 @@
 
 //トップページ / をShopsControllerのindexアクションに設定。
 //indexアクションは、 / にアクセスしたときと、 /shops にアクセスした両方で同じルーティングが設定されたことになる。
-Route::get('/', 'ShopsController@index');
+//Route::get('/', 'ShopsController@index');
+//以下を追加したため一時的にコメントアウト
+
+Route::get('/', function () {
+    return view('welcome');
+});
 
 //get,post,put,delete,edit,create,showの補助を集約
 Route::resource('shops', 'ShopsController');
 
 
 
-
+// ユーザ登録
+Route::get('signup', 'Auth\RegisterController@showRegistrationForm')->name('signup.get');
+Route::post('signup', 'Auth\RegisterController@register')->name('signup.post');
 
 
 
