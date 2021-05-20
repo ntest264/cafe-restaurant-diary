@@ -74,9 +74,16 @@ class ShopsController extends Controller
      * @return \Illuminate\Http\Response
      */
     // getでshops/（任意のid）にアクセスされた場合の「取得表示処理」
+    ///messages/1, /messages/4 といったURLにアクセスされたとき、 $id = 1 や $id = 4 のように代入される。
     public function show($id)
     {
-        //
+        //レコードすべてではなく指定されたidの値でお店情報を1つ検索して取得
+        $shop = Shop::findOrFail($id);
+
+        //登録店舗詳細ビューでそれを表示
+        return view('shops.show', [
+            'shop' => $shop,
+        ]);
     }
 
     /**
