@@ -15,13 +15,18 @@
 //indexアクションは、 / にアクセスしたときと、 /shops にアクセスした両方で同じルーティングが設定されたことになる。
 Route::get('/', 'ShopsController@index');
 
+// create: 新規作成用のフォームページ
+Route::get('shops/create', 'ShopsController@create')->name('shops.create');
+
+
+// お店情報の新規登録を処理（新規登録画面を表示するためのものではない）
+Route::post('shops', 'ShopsController@store');
+
 
 //あえてresourceは使わない：エラーが出たときにたどりやすいようにするため。
 // 登録店舗の個別詳細・編集ページ表示（これは編集ページになれる？）
 Route::get('shops/{id}', 'ShopsController@show');
 
-// お店情報の新規登録を処理（新規登録画面を表示するためのものではない）
-Route::post('shops', 'ShopsController@store');
 
 // お店情報の更新処理（編集画面を表示するためのものではない）
 Route::put('shops/{id}', 'ShopsController@update');
@@ -33,8 +38,7 @@ Route::delete('shops/{id}', 'ShopsController@destroy');
 // index: showの補助ページ（一覧ページ）
 Route::get('shops', 'ShopsController@index')->name('shops.index');
 
-// create: 新規作成用のフォームページ
-Route::get('shops/create', 'ShopsController@create')->name('shops.create');
+
 
 // edit: 更新用のフォームページ
 Route::get('shops/{id}/edit', 'ShopsController@edit')->name('shops.edit');
