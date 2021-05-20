@@ -29,7 +29,10 @@
     {{-- 登録情報編集ページへのリンク --}}
     {!! link_to_route('shops.edit', 'この情報を編集する', ['shop' => $shop->id], ['class' => 'btn btn-light']) !!}
     
-    
+     {{-- 登録情報削除フォーム --}}
+    {!! Form::model($shop, ['route' => ['shops.destroy', $shop->id], 'method' => 'delete']) !!}
+        {!! Form::submit('この情報を削除する', ['class' => 'btn btn-danger']) !!}
+    {!! Form::close() !!}
     
 
 @endsection
