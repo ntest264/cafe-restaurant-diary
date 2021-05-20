@@ -20,8 +20,10 @@
                 {{--ここで受け取ったレコード群を1つずつ$shopとして取り出す。--}}
                 @foreach ($shops as $shop)
                 <tr>
+                    {{-- メッセージ詳細ページへのリンク --}}
+                    <td>{!! link_to_route('shops.show', $shop->id, ['shop' => $shop->id]) !!}</td>
                     {{--idカラムの内容を表示--}}
-                    <td>{{ $shop->id }}</td>
+                    {{--<td>{{ $shop->id }}</td> ここはなしでもOKと確認できたら消す--}}
                     {{--カテゴリーカラムの内容を表示--}}
                     <td>{{ $shop->category }}</td>
                     {{--店名カラムの内容を表示--}}
