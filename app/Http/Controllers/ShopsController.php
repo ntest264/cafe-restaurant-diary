@@ -95,7 +95,13 @@ class ShopsController extends Controller
     // getでshops/（任意のid）/editにアクセスされた場合の「更新画面表示処理」
     public function edit($id)
     {
-        //
+        // idの値で登録情報を検索して取得
+        $shop = Shop::findOrFail($id);
+
+        // 登録情報編集ビューでそれを表示
+        return view('shops.edit', [
+            'shop' => $shop,
+        ]);
     }
 
     /**
