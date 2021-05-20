@@ -34,7 +34,14 @@ class ShopsController extends Controller
     // getでshops/createにアクセスされた場合の「新規登録画面表示処理」
     public function create()
     {
-        //
+        //Shopモデルのためのフォーム。フォーム入力のためにインスタンス作成。
+        $shop = new Shop;
+
+        // お店情報登録ビューを表示
+        return view('shops.create', [
+        //shopという箱の中に$shopという値が入っている
+            'shop' => $shop,
+        ]);
     }
 
     /**
