@@ -14,4 +14,5 @@
             {{--ログインページへのリンク--}}
         </div>
     </div>
+   @endif
 @endsection
