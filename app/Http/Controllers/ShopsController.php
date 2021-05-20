@@ -114,7 +114,17 @@ class ShopsController extends Controller
      // putまたはpatchでshops/（任意のid）にアクセスされた場合の「更新処理」
     public function update(Request $request, $id)
     {
-        //
+         // idの値でお店情報を検索して取得
+        $shop = Shop::findOrFail($id);
+        // 情報を更新
+        $shop->category = $request->category;
+        $shop->shop_name = $request->shop_name;
+        $shop->place = $request->place;
+        $shop->other = $request->other;
+        $shop->save();
+
+        // トップページへリダイレクトさせる
+        return redirect('/');
     }
 
     /**
