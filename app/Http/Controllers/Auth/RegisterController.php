@@ -21,7 +21,7 @@ class RegisterController extends Controller
     | provide this functionality without requiring any additional code.
     |
     */
-
+    //Routeで書いたアクションを取り込む。
     use RegistersUsers;
 
     /**
