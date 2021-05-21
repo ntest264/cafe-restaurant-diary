@@ -15,9 +15,6 @@
 //indexアクションは、 / にアクセスしたときと、 /shops にアクセスした両方で同じルーティングが設定されたことになる。
 Route::get('/', 'ShopsController@index');
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
 
 
 // ユーザ登録
