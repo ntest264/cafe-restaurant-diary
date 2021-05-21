@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+@if(Auth::check())
     <h1>登録店一覧</h1>
 
     {{--Controllerから渡された$shopsというレコード群が1つ以上あるとき--}}
@@ -42,4 +42,5 @@
      {{--引数は順にルーティング名・リンクにしたい文字列・URL内のパラメータに代入したい値を配列形式で指定（今回は不要なので空っぽ）・HTMLタグの属性を配列形式で指定（Boostrapのボタンとして表示するためのクラス指定）--}}
     {!! link_to_route('shops.create', 'お店を登録する', [], ['class' => 'btn btn-primary']) !!}
      {{--ボタンはとりあえずこれで。後でデザインは考える--}}
+@endif
 @endsection

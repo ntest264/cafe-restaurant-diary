@@ -80,13 +80,18 @@ class ShopsController extends Controller
     ///messages/1, /messages/4 といったURLにアクセスされたとき、 $id = 1 や $id = 4 のように代入される。
     public function show($id)
     {
-        //レコードすべてではなく指定されたidの値でお店情報を1つ検索して取得
+        // idの値で店舗情報を検索して取得
         $shop = Shop::findOrFail($id);
+        // 認証済みユーザ（閲覧者）がその登録情報の所有者である場合は、タスクを閲覧
+         if (\Auth::id() === $shop->user_id) {
 
         //登録店舗詳細ビューでそれを表示
         return view('shops.show', [
             'shop' => $shop,
         ]);
+         }
+        // トップページへリダイレクトさせる
+        return redirect('/');
     }
 
     /**
@@ -100,11 +105,15 @@ class ShopsController extends Controller
     {
         // idの値で登録情報を検索して取得
         $shop = Shop::findOrFail($id);
-
+        // 認証済みユーザ（閲覧者）がその登録情報の所有者である場合は、投稿を編集
+         if (\Auth::id() === $shop->user_id) {
         // 登録情報編集ビューでそれを表示
         return view('shops.edit', [
             'shop' => $shop,
         ]);
+        }
+        // トップページへリダイレクトさせる
+        return redirect('/');
     }
 
     /**

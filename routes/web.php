@@ -32,7 +32,7 @@ Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 
 Route::group(['middleware' => ['auth']], function () {
     // 認証済みのユーザだけがこれらのアクションにアクセスできる.
-    Route::resource('shops', 'ShopstsController');
+    Route::resource('shops', 'ShopsController');
 });
 
 
