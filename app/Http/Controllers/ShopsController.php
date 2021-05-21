@@ -111,6 +111,7 @@ class ShopsController extends Controller
     // getでshops/（任意のid）/editにアクセスされた場合の「更新画面表示処理」
     public function edit($id)
     {
+        
         // idの値で登録情報を検索して取得
         $shop = Shop::findOrFail($id);
         // 認証済みユーザ（閲覧者）がその登録情報の所有者である場合は、投稿を編集
@@ -134,6 +135,13 @@ class ShopsController extends Controller
      // putまたはpatchでshops/（任意のid）にアクセスされた場合の「更新処理」
     public function update(Request $request, $id)
     {
+        // バリデーション
+        $request->validate([
+            'category' => 'required',
+            'shop_name' => 'required',
+            'place' => 'required',
+            'other' => 'required',
+        ]);
          // idの値でお店情報を検索して取得
         $shop = Shop::findOrFail($id);
         // 情報を更新
