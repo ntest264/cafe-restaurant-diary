@@ -28,7 +28,7 @@ class ShopsController extends Controller
             ];
         }
         // 登録情報一覧ビューでそれらを表示
-        return view('shops.index', $data);
+        return view('welcome', $data);
     }
 
     /**
