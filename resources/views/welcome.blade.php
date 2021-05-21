@@ -1,16 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-   {{--以下@elseまでは仮で　ユーザー名表示の部分とかは削るかも--}}
    @if (Auth::check())
-          <div class="row">
-            <aside class="col-sm-4">
-                <div class="card">
-                    <div class="card-header">
-                        <h3 class="card-title">{{ Auth::user()->name }}</h3>
-                    </div>
-                </div>
-            </aside>
+         
             <div class="col-sm-8">
                 {{-- 登録店舗一覧 --}}
                 @include('shops.shops')

@@ -27,7 +27,7 @@ class ShopsController extends Controller
                 'shops' => $shops,
             ];
         }
-        // お店情報一覧ビューでそれを表示（Controllerから特定のViewを呼び出す）
+        // 登録情報一覧ビューでそれらを表示
         return view('shops.index', $data);
     }
 
@@ -67,7 +67,7 @@ class ShopsController extends Controller
         ]);
         
         // 認証済みユーザ（閲覧者）のお店情報として作成（リクエストされた値をもとに作成）
-        $request->user()->shop()->create([
+        $request->user()->shops()->create([
         'category' => $request->category,
         'shop_name' => $request->shop_name,
         'place' => $request->place,
