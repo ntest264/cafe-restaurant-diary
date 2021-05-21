@@ -150,6 +150,7 @@ class ShopsController extends Controller
         $shop->place = $request->place;
         $shop->other = $request->other;
         $shop->save();
+      
 
         // トップページへリダイレクトさせる
         return redirect('/');

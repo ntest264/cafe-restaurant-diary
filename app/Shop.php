@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Shop extends Model
 {
-    protected $fillable = ['content'];
+    protected $fillable = ['content','category','shop_name','place','other'];
 
     /**
      * この登録情報を所有するユーザ。（ Userモデルとの関係を定義）
