@@ -3,7 +3,7 @@
 @section('content')
 
 <h1>登録番号{{ $shop->id }}の詳細ページ</h1>
-    //デザインはまた後程（createページのようにできたらしたい）
+    {{--デザインはまた後程（createページのようにできたらしたい）--}}
     <table class="table table-bordered">
         <tr>
             <th>登録番号</th>

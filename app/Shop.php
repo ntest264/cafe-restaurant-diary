@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Shop extends Model
 {
+    //ユーザーが記入する要素を記入
     protected $fillable = ['content','category','shop_name','place','other'];
 
     /**
