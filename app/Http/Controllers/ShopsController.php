@@ -58,6 +58,14 @@ class ShopsController extends Controller
     // postでshops/にアクセスされた場合の「新規登録処理」
     public function store(Request $request)
     {
+        // バリデーション
+        $request->validate([
+            'category' => 'required',
+            'shop_name' => 'required',
+            'place' => 'required',
+            'other' => 'required',
+        ]);
+        
         // 認証済みユーザ（閲覧者）のお店情報として作成（リクエストされた値をもとに作成）
         $request->user()->shop()->create([
         'category' => $request->category,
