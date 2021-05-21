@@ -58,15 +58,13 @@ class ShopsController extends Controller
     // postでshops/にアクセスされた場合の「新規登録処理」
     public function store(Request $request)
     {
-         // お店情報を作成
-        $shop = new Shop;
-        //送られてきたフォームの内容categoryを$requestから取り出す。
-        $shop->category = $request->category;
-        $shop->shop_name = $request->shop_name;
-        $shop->place = $request->place;
-        $shop->other = $request->other;
-        //新規作成したお店情報をインスタンスに代入・保存
-        $shop->save();
+        // 認証済みユーザ（閲覧者）のお店情報として作成（リクエストされた値をもとに作成）
+        $request->user()->shop()->create([
+        'category' => $request->category,
+        'shop_name' => $request->shop_name,
+        'place' => $request->place,
+        'other' => $request->other,
+        ]);
 
         // トップページへリダイレクトさせる
         return redirect('/');
