@@ -141,8 +141,10 @@ class ShopsController extends Controller
     {
         // idの値で登録情報を検索して取得
         $shop = Shop::findOrFail($id);
-        // 登録情報を削除
+        // 認証済みユーザ（閲覧者）がその情報の所有者である場合は、登録情報を削除
+       if (\Auth::id() === $shop->user_id) {
         $shop->delete();
+       }
 
         // トップページへリダイレクトさせる
         return redirect('/');
