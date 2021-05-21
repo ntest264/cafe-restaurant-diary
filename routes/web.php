@@ -16,11 +16,6 @@
 Route::get('/', 'ShopsController@index');
 
 
-//get,post,put,delete,edit,create,showの補助を集約
-Route::resource('shops', 'ShopsController');
-
-
-
 // ユーザ登録
 Route::get('signup', 'Auth\RegisterController@showRegistrationForm')->name('signup.get');
 Route::post('signup', 'Auth\RegisterController@register')->name('signup.post');
@@ -32,7 +27,7 @@ Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 
 Route::group(['middleware' => ['auth']], function () {
     // 認証済みのユーザだけがこれらのアクションにアクセスできる.
+    //get,post,put,delete,edit,create,showの補助を集約
     Route::resource('shops', 'ShopsController');
 });
-
 
