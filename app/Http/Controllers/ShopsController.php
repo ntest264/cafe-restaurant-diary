@@ -27,7 +27,7 @@ class ShopsController extends Controller
                 'shops' => $shops,
             ];
         }
-        // 登録情報一覧ビューでそれらを表示
+        // Welcomeビューでそれらを表示
         return view('welcome', $data);
     }
 
