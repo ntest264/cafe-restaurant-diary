@@ -16,14 +16,19 @@ class ShopsController extends Controller
     // getでshops/にアクセスされた場合の「一覧表示処理」
     public function index()
     {
-         // お店情報（Shopモデル）一覧を取得。$shopsに入ったデータをviewに渡す。
-        $shops = Shop::all();
-
+         $data = [];
+        if (\Auth::check()) { // 認証済みの場合
+            // 認証済みユーザを取得
+            $user = \Auth::user();
+            // ユーザの投稿の一覧を作成日時の降順で取得
+            $shops = $user->shops()->orderBy('created_at', 'desc')->paginate(10);
+            $data = [
+                'user' => $user,
+                'shops' => $shops,
+            ];
+        }
         // お店情報一覧ビューでそれを表示（Controllerから特定のViewを呼び出す）
-        return view('shops.index', [
-            //shopsという箱の中にshopsという値が入っている。
-            'shops' => $shops,
-        ]);
+        return view('shops.index', $data);
     }
 
     /**
