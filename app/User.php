@@ -36,4 +36,22 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
+    /**
+     * このユーザが所有するお店情報。（ Shopモデルとの関係を定義）
+     */
+    //UserがもつShopは複数存在するため複数形で 
+    public function shops()
+    {
+        return $this->hasMany(Shop::class);
+    }
+    
+     /**
+     * このユーザに関係するモデルの件数をロードする。
+     */
+    //Userが持つShopの数をカウントする
+    public function loadRelationshipCounts()
+    {
+        $this->loadCount('shops');
+    }
 }
