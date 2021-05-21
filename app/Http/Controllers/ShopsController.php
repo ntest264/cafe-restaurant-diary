@@ -60,10 +60,10 @@ class ShopsController extends Controller
     {
         // バリデーション
         $request->validate([
-            'category' => 'required',
-            'shop_name' => 'required',
-            'place' => 'required',
-            'other' => 'required',
+            'category' => 'required|max:255',
+            'shop_name' => 'required|max:255',
+            'place' => 'required|max:255',
+            'other' => 'required|max:255',
         ]);
         
         // 認証済みユーザ（閲覧者）のお店情報として作成（リクエストされた値をもとに作成）
@@ -137,10 +137,10 @@ class ShopsController extends Controller
     {
         // バリデーション
         $request->validate([
-            'category' => 'required',
-            'shop_name' => 'required',
-            'place' => 'required',
-            'other' => 'required',
+            'category' => 'required|max:255',
+            'shop_name' => 'required|max:255',
+            'place' => 'required|max:255',
+            'other' => 'required|max:255',
         ]);
          // idの値でお店情報を検索して取得
         $shop = Shop::findOrFail($id);
