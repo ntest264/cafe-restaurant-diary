@@ -174,7 +174,9 @@ class ShopsController extends Controller
        if (\Auth::id() === $shop->user_id) {
         $shop->delete();
        }
-
+        
+        //新規登録完了時に表示するメッセージ
+        session()->flash('flash_message', '削除しました');
         // トップページへリダイレクトさせる
         return redirect('/');
     }
