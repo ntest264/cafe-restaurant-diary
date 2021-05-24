@@ -26,7 +26,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    //protected $redirectTo = RouteServiceProvider::HOME;
+    //protected $redirectTo = RouteServiceProvider::HOME; にメッセージを追加する
     protected function redirectTo() {
         session()->flash('flash_message', 'ログインしました');
         return RouteServiceProvider::HOME;
