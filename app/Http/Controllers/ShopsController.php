@@ -74,6 +74,7 @@ class ShopsController extends Controller
         'other' => $request->other,
         ]);
 
+        session()->flash('flash_message', '登録が完了しました');
         // トップページへリダイレクトさせる
         return redirect('/');
     }
