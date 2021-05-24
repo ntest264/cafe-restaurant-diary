@@ -3,7 +3,6 @@
 @section('content')
 @if(Auth::check())
     <h1>登録店一覧</h1>
-
     {{--Controllerから渡された$shopsというレコード群が1つ以上あるとき--}}
     @if (count($shops) > 0)
         <table class="table table-striped">
@@ -25,13 +24,13 @@
                     {{--idカラムの内容を表示--}}
                     {{--<td>{{ $shop->id }}</td> ここはなしでもOKと確認できたら消す--}}
                     {{--カテゴリーカラムの内容を表示--}}
-                    <td>{{ $shop->category }}</td>
+                    <td>{!! nl2br(e(Str::limit($shop->category, 20))) !!}</td>
                     {{--店名カラムの内容を表示--}}
-                    <td>{{ $shop->shop_name }}</td>
+                    <td>{!! nl2br(e(Str::limit($shop->shop_name, 20))) !!}</td>
                     {{--所在地カラムの内容を表示--}}
-                    <td>{{ $shop->place }}</td>
+                    <td>{!! nl2br(e(Str::limit($shop->place, 10))) !!}</td>
                     {{--その他カラムの内容を表示--}}
-                    <td>{{ $shop->other }}</td>
+                    <td>{!! nl2br(e(Str::limit($shop->other, 200))) !!}</td>
                 </tr>
                 @endforeach
             </tbody>
