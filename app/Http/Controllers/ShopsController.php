@@ -73,7 +73,8 @@ class ShopsController extends Controller
         'place' => $request->place,
         'other' => $request->other,
         ]);
-
+        
+        //登録完了時に表示するメッセージ
         session()->flash('flash_message', '登録が完了しました');
         // トップページへリダイレクトさせる
         return redirect('/');
@@ -152,7 +153,8 @@ class ShopsController extends Controller
         $shop->other = $request->other;
         $shop->save();
       
-
+        //更新完了時に表示するメッセージ
+        session()->flash('flash_message', '更新しました');
         // トップページへリダイレクトさせる
         return redirect('/');
     }
