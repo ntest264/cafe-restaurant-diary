@@ -139,6 +139,19 @@ return [
         'password' => [
             'required' => 'パスワードを入力してください',
         ],
+        'category' => [
+            'required' => 'カテゴリーを入力してください',
+        ],
+        'shop_name' => [
+            'required' => '店名を入力してください',
+        ],
+        'place' => [
+            'required' => '所在地を入力してください',
+        ],
+        'other' => [
+            'required' => 'その他を入力してください',
+        ],
+        
     ],
 
     /*
