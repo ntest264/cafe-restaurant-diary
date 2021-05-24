@@ -175,7 +175,7 @@ class ShopsController extends Controller
         $shop->delete();
        }
         
-        //新規登録完了時に表示するメッセージ
+        //登録情報削除時に表示するメッセージ
         session()->flash('flash_message', '削除しました');
         // トップページへリダイレクトさせる
         return redirect('/');
