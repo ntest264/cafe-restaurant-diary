@@ -78,7 +78,7 @@ return [
     'max'                  => [
         'numeric' => ':attributeには、:max以下の数字を指定してください。',
         'file'    => ':attributeには、:max kB以下のファイルを指定してください。',
-        'string'  => ':attributeは、:max文字以下で指定してください。',
+        'string'  => ':attributeは、:max文字以下で入力してください。',
         'array'   => ':attributeは:max個以下指定してください。',
     ],
     'mimes'                => ':attributeには:valuesタイプのファイルを指定してください。',
@@ -165,6 +165,11 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+         'category' => 'カテゴリー',
+         'shop_name' => '店名',
+         'place' => '所在地',
+         'other' => 'その他',
+         ],
 
 ];
