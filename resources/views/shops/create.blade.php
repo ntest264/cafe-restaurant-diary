@@ -51,7 +51,7 @@
                 </div>
                 {{--ボタンのデザインはとりあえずこれ。後で調整--}}
                 <div class="col-3 offset-sm-1">
-                {!! Form::submit('登録', ['class' => 'btn btn-primary']) !!}
+                {!! Form::submit('登録', ['class' => 'btn btn-info']) !!}
                 </div>
             {{--フォームを終了--}}
             {!! Form::close() !!}
