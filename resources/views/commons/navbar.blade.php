@@ -14,7 +14,7 @@
                     {{-- 登録店一覧ページへのリンク --}}
                    <li class="nav-item"><a href="/" class="nav-link">登録店一覧</a></li>
                     {{-- ログアウトへのリンク --}}
-                    <li class="dropdown-item">{!! link_to_route('logout.get', 'Logout') !!}</li>
+                   <li>{!! link_to_route('logout.get', 'ログアウト', [], ['class' => 'nav-link']) !!}</li>
                 @else
                  {{-- ユーザ登録ページへのリンク --}}
                     <li>{!! link_to_route('signup.get', '新規登録', [], ['class' => 'nav-link']) !!}</li>
