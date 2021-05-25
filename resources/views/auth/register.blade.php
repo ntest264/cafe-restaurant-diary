@@ -43,7 +43,7 @@
                     </div>
                 </div>
                 <div class="col-3 offset-sm-1">
-                {!! Form::submit('登録', ['class' => 'btn btn-primary']) !!}
+                {!! Form::submit('登録', ['class' => 'btn btn-dark']) !!}
                 </div>
             {!! Form::close() !!}
 @endsection
