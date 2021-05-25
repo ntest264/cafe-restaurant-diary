@@ -25,7 +25,7 @@
                     </div>
                 </div>
                 <br>
-                <div class="col-3 offset-sm-5">
+                <div class="text-center">
                 {!! Form::submit('ログイン', ['class' => 'btn btn-primary']) !!}
                 </div>
             {!! Form::close() !!}
