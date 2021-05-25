@@ -46,7 +46,7 @@
                     {!! Form::label('other', 'その他（感想やメニュー内容など）') !!}
                     </div>
                     <div class="col-sm-6">
-                    {!! Form::text('other', null, ['class' => 'form-control']) !!}
+                    {!! Form::textarea('other', null, ['class' => 'form-control']) !!}
                     </div>
                 </div>
                 {{--ボタンのデザインはとりあえずこれ。後で調整--}}
