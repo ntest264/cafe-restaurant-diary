@@ -25,6 +25,7 @@
             <th>その他</th>
             <td>{{ $shop->other }}</td>
         </tr>
+        </thead>
     </table>
     {{-- 登録情報編集ページへのリンク --}}
     {!! link_to_route('shops.edit', 'この情報を編集する', ['shop' => $shop->id], ['class' => 'btn btn-light']) !!}
