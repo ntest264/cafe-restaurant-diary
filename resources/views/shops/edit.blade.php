@@ -7,7 +7,7 @@
 
 
 
- {!! Form::model($shop, ['route' => ['shops.update', $shop->id], 'method' => 'put']) !!}
+                {!! Form::model($shop, ['route' => ['shops.update', $shop->id], 'method' => 'put']) !!}
  　　　　　　　　　　　　　<div class="form-group row">
                     {{--第一引数に Form::modelで指定されていたShopモデルのインスタンスである $shop のカラム（この場合 'catrgory' カラム）--}}
                     {{--第二引数にラベル名--}}
@@ -45,7 +45,7 @@
                     {!! Form::label('other', 'その他（感想やメニュー内容など）') !!}
                     </div>
                     <div class="col-sm-6">
-                    {!! Form::textarea('other', null, ['class' => 'form-control']) !!}
+                    {!! Form::textarea('other', null, ['class' => 'form-control', 'rows' => '3' ])!!}
                     </div>
                 </div>
             <div class="col-3 offset-sm-1">  
