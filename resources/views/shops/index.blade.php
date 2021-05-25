@@ -21,8 +21,7 @@
                 <tr>
                     {{-- 登録情報詳細ページへのリンク --}}
                     <td>{!! link_to_route('shops.show', $shop->id, ['shop' => $shop->id]) !!}</td>
-                    {{--idカラムの内容を表示--}}
-                    {{--<td>{{ $shop->id }}</td> ここはなしでもOKと確認できたら消す--}}
+
                     {{--カテゴリーカラムの内容を表示--}}
                     <td>{!! nl2br(e(Str::limit($shop->category, 20))) !!}</td>
                     {{--店名カラムの内容を表示--}}
