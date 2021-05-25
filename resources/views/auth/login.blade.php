@@ -26,7 +26,7 @@
                 </div>
                 <br>
                 <div class="text-center">
-                {!! Form::submit('ログイン', ['class' => 'btn btn-dark']) !!}
+                {!! Form::submit('ログイン', ['class' => 'btn btn-info']) !!}
                 </div>
             {!! Form::close() !!}
             <br>
