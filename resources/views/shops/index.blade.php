@@ -21,7 +21,6 @@
                 <tr>
                     {{-- 登録情報詳細ページへのリンク --}}
                     <td>{!! link_to_route('shops.show', $shop->id, ['shop' => $shop->id]) !!}</td>
-
                     {{--カテゴリーカラムの内容を表示--}}
                     <td>{!! nl2br(e(Str::limit($shop->category, 20))) !!}</td>
                     {{--店名カラムの内容を表示--}}
@@ -29,7 +28,7 @@
                     {{--所在地カラムの内容を表示--}}
                     <td>{!! nl2br(e(Str::limit($shop->place, 10))) !!}</td>
                     {{--その他カラムの内容を表示--}}
-                    <td>{!! nl2br(e(Str::limit($shop->other, 200))) !!}</td>
+                    <td>{!! nl2br(e(Str::limit($shop->other, 50))) !!}</td>
                 </tr>
                 @endforeach
             </tbody>
