@@ -6,12 +6,7 @@
             <div class="col-sm-8">
                 {{-- 登録店舗一覧 --}}
                    @include('shops.index')
-                {{-- お店情報登録ページへのリンク --}}
-     {{--引数は順にルーティング名・リンクにしたい文字列・URL内のパラメータに代入したい値を配列形式で指定（今回は不要なので空っぽ）・HTMLタグの属性を配列形式で指定（Boostrapのボタンとして表示するためのクラス指定）--}}
-    {!! link_to_route('shops.create', 'お店を登録する', [], ['class' => 'btn btn-primary']) !!}
-     {{--ボタンはとりあえずこれで。後でデザインは考える--}}
             </div>
-        </div>
   @else
     <div class="center jumbotron">
         <div class="text-center">
