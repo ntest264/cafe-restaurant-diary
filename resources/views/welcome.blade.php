@@ -14,11 +14,11 @@
             <h5>お気に入りのカフェやレストランの記録をしましょう。</h5>
             <br>
             {{-- ユーザ登録ページへのリンク --}}
-            {!! link_to_route('signup.get', 'ユーザー登録をする', [], ['class' => 'btn btn-lg btn-primary']) !!}
+            {!! link_to_route('signup.get', 'ユーザー登録をする', [], ['class' => 'btn btn-lg btn-info']) !!}
             <br>
             <br>
             {{--ログインページへのリンク--}}
-            {!! link_to_route('login.post', 'ログインする', [], ['class' => 'btn btn-lg btn-primary']) !!}
+            {!! link_to_route('login.post', 'ログインする', [], ['class' => 'btn btn-lg btn-info']) !!}
         </div>
     </div>
    @endif
