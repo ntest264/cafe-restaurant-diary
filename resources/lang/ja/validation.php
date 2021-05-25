@@ -170,6 +170,7 @@ return [
          'shop_name' => '店名',
          'place' => '所在地',
          'other' => 'その他',
+         'password' => 'パスワード',
          ],
 
 ];
