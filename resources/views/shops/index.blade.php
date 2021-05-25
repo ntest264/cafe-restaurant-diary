@@ -6,7 +6,7 @@
     {{--Controllerから渡された$shopsというレコード群が1つ以上あるとき--}}
     @if (count($shops) > 0)
         <table class="table table-striped">
-            <thead>
+            <thead class="thead-dark">
                 <tr>
                     <th>登録番号</th>
                     <th>カテゴリー</th>
