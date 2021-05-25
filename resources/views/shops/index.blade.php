@@ -24,7 +24,7 @@
                     {{--カテゴリーカラムの内容を表示--}}
                     <td>{!! nl2br(e(Str::limit($shop->category, 20))) !!}</td>
                     {{--店名カラムの内容を表示--}}
-                    <td>{!! nl2br(e(Str::limit($shop->shop_name, 20))) !!}</td>
+                    <td>{!! nl2br(e(Str::limit($shop->shop_name, 15))) !!}</td>
                     {{--所在地カラムの内容を表示--}}
                     <td>{!! nl2br(e(Str::limit($shop->place, 10))) !!}</td>
                     {{--その他カラムの内容を表示--}}
