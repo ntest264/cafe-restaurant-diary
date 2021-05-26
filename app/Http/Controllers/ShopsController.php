@@ -47,6 +47,12 @@ class ShopsController extends Controller
         //shopという箱の中に$shopという値が入っている
             'shop' => $shop,
         ]);
+        
+        $categories = \APP\Category::orderBy('code','asc')->pluck('name', 'code');
+        $categories = $categories -> prepend('選択してください', '');
+        return view('shops.create',[
+            'categories' => $categories
+            ]);
     }
 
     /**

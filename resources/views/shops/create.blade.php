@@ -28,7 +28,7 @@
                     {!! Form::label('category', 'カテゴリー') !!}
                     </div>
                     <div class="col-sm-6">
-                    {!! Form::select('category_name', $categories, null,['class' => 'form', 'name' => 'category_name']) !!}
+                    {!! Form::select('category_id', $categories, null,['class' => 'form', 'id' => 'category_id']) !!}
                     </div>
                 </div>
                 <div class="form-group row">
