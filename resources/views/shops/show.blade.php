@@ -2,20 +2,16 @@
 
 @section('content')
 
-<h1>登録番号{{ $shop->id }}の詳細ページ</h1>
+<h1>{{ $shop->shop_name }}の詳細ページ</h1>
     <table class="table table-bordered">
         <thead class="thead-light">
         <tr>
-            <th>登録番号</th>
-            <td>{{ $shop->id }}</td>
+            <th>店名</th>
+            <td>{{ $shop->shop_name }}</td>
         </tr>
         <tr>
             <th>カテゴリー</th>
             <td>{{ $shop->category }}</td>
-        </tr>
-        <tr>
-            <th>店名</th>
-            <td>{{ $shop->shop_name }}</td>
         </tr>
         <tr>
             <th>所在地</th>

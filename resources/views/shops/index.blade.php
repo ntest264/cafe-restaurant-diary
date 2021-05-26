@@ -8,9 +8,9 @@
         <table class="table table-striped">
             <thead class="thead-dark">
                 <tr>
-                    <th>登録番号</th>
-                    <th>カテゴリー</th>
+                {{--<th>登録番号</th>--}}
                     <th>店名</th>
+                    <th>カテゴリー</th>
                     <th>所在地</th>
                     <th>その他</th>
                 </tr>
@@ -19,12 +19,10 @@
                 {{--ここで受け取ったレコード群を1つずつ$shopとして取り出す。--}}
                 @foreach ($shops as $shop)
                 <tr>
-                    {{-- 登録情報詳細ページへのリンク --}}
-                    <td>{!! link_to_route('shops.show', $shop->id, ['shop' => $shop->id]) !!}</td>
+                    {{-- 店名カラムの内容を表示＆登録情報詳細ページへのリンク --}}
+                    <td>{!! link_to_route('shops.show', $shop->shop_name, ['shop' => $shop->id]) !!}</td>
                     {{--カテゴリーカラムの内容を表示--}}
                     <td>{!! nl2br(e(Str::limit($shop->category, 20))) !!}</td>
-                    {{--店名カラムの内容を表示--}}
-                    <td>{!! nl2br(e(Str::limit($shop->shop_name, 15))) !!}</td>
                     {{--所在地カラムの内容を表示--}}
                     <td>{!! nl2br(e(Str::limit($shop->place, 10))) !!}</td>
                     {{--その他カラムの内容を表示--}}
