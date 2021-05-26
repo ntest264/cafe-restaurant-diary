@@ -12,22 +12,22 @@
                     {{--第一引数に Form::modelで指定されていたShopモデルのインスタンスである $shop のカラム（この場合 'catrgory' カラム）--}}
                     {{--第二引数にラベル名--}}
                     <div class="col-3 offset-sm-1">
-                    {!! Form::label('catrgory', 'カテゴリー') !!}
+                    {!! Form::label('shop_name', '店名') !!}
                     </div>
                     {{--第一引数 $shop の 'category' カラムを指定。Form::text() は <input type="text"> を生成--}}
                     {{--第二引数はテキストボックスに入れておきたい固定の初期値（不要なのでnull）--}}
                     {{--第三引数はタグの属性情報を配列形式で指定--}}
                     <div class="col-sm-6">
-                    {!! Form::text('category', null, ['class' => 'form-control']) !!}
+                    {!! Form::text('shop_name', null, ['class' => 'form-control']) !!}
                     </div>
                 </div>
                 <div class="form-group row">
-                    {{--店名のフォーム--}}
+                    {{--カテゴリーのフォーム--}}
                     <div class="col-3 offset-sm-1">
-                    {!! Form::label('shop_name', '店名') !!}
+                    {!! Form::label('category', 'カテゴリー') !!}
                     </div>
                     <div class="col-sm-6">
-                    {!! Form::text('shop_name', null, ['class' => 'form-control']) !!}
+                    {!! Form::text('category', null, ['class' => 'form-control']) !!}
                     </div>
                 </div>
                 <div class="form-group row">
