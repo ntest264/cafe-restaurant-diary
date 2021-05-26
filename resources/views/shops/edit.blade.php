@@ -27,7 +27,7 @@
                     {!! Form::label('category', 'カテゴリー') !!}
                     </div>
                     <div class="col-sm-6">
-                    {!! Form::text('category', null, ['class' => 'form-control']) !!}
+                    {!! Form::select('category', ['日本料理','西洋料理','中華料理','エスニック料理','その他']) !!}
                     </div>
                 </div>
                 <div class="form-group row">
