@@ -17,4 +17,10 @@ class Shop extends Model
     {
         return $this->belongsTo(User::class);
     }
+    
+    public function category()
+    {
+        // 登録情報は1つのカテゴリーに属する
+        return $this->belongsTo('App\Category');
+    }
 }
