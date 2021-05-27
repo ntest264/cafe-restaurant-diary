@@ -127,6 +127,13 @@ class ShopsController extends Controller
         return view('shops.edit', [
             'shop' => $shop,
         ]);
+        
+        $category = new Category;
+        $categories = $category->getLists();
+ 
+        $shop = Shop::findOrFail($id);
+        return view('shops.edit', ['shop' => $shop, 'categories' => $categories]);
+        
         }
         // トップページへリダイレクトさせる
         return redirect('/');
