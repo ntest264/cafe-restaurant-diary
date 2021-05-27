@@ -24,8 +24,8 @@ class ShopsController extends Controller
            
          $id = $request->id;
          if (!is_null($id)) {
-            $category = \App\Category::where('id', $id)->pluck('name');
-            $shops = $user->shops()->where('category', $category)->orderBy('created_at', 'desc')->paginate(10);
+            $name = \App\Category::where('id', $id)->pluck('name', 'id');
+            $shops = $user->shops()->where('category', $name)->orderBy('created_at', 'desc')->paginate(10);
             }
          else {
             // ユーザの投稿の一覧を作成日時の降順で取得
@@ -37,6 +37,7 @@ class ShopsController extends Controller
                 'shops' => $shops,
                 'categories' => $categories,
                 'id' => $id,
+            
             ];
         }
         // Welcomeビューでそれらを表示
