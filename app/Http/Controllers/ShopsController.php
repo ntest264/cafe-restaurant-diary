@@ -48,11 +48,10 @@ class ShopsController extends Controller
             'shop' => $shop,
         ]);
         
-        $categories = \APP\Category::orderBy('code','asc')->pluck('name', 'code');
-        $categories = $categories -> prepend('選択してください', '');
-        return view('shops.create',[
-            'categories' => $categories
-            ]);
+        $category = new Category;
+        $categories = $category->getLists()->prepend('選択してください', '');
+ 
+        return view('shops.create', ['categories' => $categories]);
     }
 
     /**
