@@ -53,7 +53,7 @@ class ShopsController extends Controller
     {
         //Shopモデルのためのフォーム。フォーム入力のためにインスタンス作成。
         $shop = new Shop;
-        $categories = \App\Category::orderBy('id','asc')->pluck('name', 'name');
+        $categories = \App\Category::orderBy('id','asc')->pluck('name', 'id');
         $categories = $categories -> prepend('選択してください', '');
 
         // お店情報登録ビューを表示
