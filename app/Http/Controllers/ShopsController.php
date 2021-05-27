@@ -14,19 +14,28 @@ class ShopsController extends Controller
      * @return \Illuminate\Http\Response
      */
     // getでshops/にアクセスされた場合の「一覧表示処理」
-    public function index()
+    public function index(Request $request)
     {
          $data = [];
         if (\Auth::check()) { // 認証済みの場合
             // 認証済みユーザを取得
             $user = \Auth::user();
+            $categories = \App\Category::orderBy('id','asc')->pluck('name', 'name');
+           
+         $id = $request->id;
+         if (!is_null($id)) {
+            $shops = $user->shops()->where('id', $id)->orderBy('created_at', 'desc')->paginate(10);
+            }
+         else {
             // ユーザの投稿の一覧を作成日時の降順で取得
             $shops = $user->shops()->orderBy('created_at', 'desc')->paginate(10);
-            $categories = \App\Category::orderBy('id','asc')->pluck('name', 'name');
+            }
+           
             $data = [
                 'user' => $user,
                 'shops' => $shops,
                 'categories' => $categories,
+                'id' => $id,
             ];
         }
         // Welcomeビューでそれらを表示

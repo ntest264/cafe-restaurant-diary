@@ -3,19 +3,22 @@
 @section('content')
 @if(Auth::check())
     <h1>登録店一覧</h1>
-    {{--Controllerから渡された$shopsというレコード群が1つ以上あるとき--}}
-    @if (count($shops) > 0)
-    
-       <div class="mt-4 mb-4">
+    <div class="mt-4 mb-4">
         @foreach($categories as $id => $name)
         <span class="btn"><a href="{{ route('shops.index', ['id'=>$id]) }}" title="{{ $name }}">{{ $name }}</a></span>
         @endforeach
+       {{ $shops->appends(['id' => $id])->links() }}
        </div>
-       
+    {{-- お店情報登録ページへのリンク --}}
+     {{--引数は順にルーティング名・リンクにしたい文字列・URL内のパラメータに代入したい値を配列形式で指定（今回は不要なので空っぽ）・HTMLタグの属性を配列形式で指定（Boostrapのボタンとして表示するためのクラス指定）--}}
+    {!! link_to_route('shops.create', 'お店を登録する', [], ['class' => 'btn btn-info']) !!} 
+   <br>
+   <br>
+    {{--Controllerから渡された$shopsというレコード群が1つ以上あるとき--}}
+    @if (count($shops) > 0)
         <table class="table table-striped">
             <thead class="thead-dark">
                 <tr>
-                {{--<th>登録番号</th>--}}
                     <th>店名</th>
                     <th>カテゴリー</th>
                     <th>所在地</th>
@@ -39,10 +42,5 @@
             </tbody>
         </table>
     @endif
-    
-     {{-- お店情報登録ページへのリンク --}}
-     {{--引数は順にルーティング名・リンクにしたい文字列・URL内のパラメータに代入したい値を配列形式で指定（今回は不要なので空っぽ）・HTMLタグの属性を配列形式で指定（Boostrapのボタンとして表示するためのクラス指定）--}}
-    {!! link_to_route('shops.create', 'お店を登録する', [], ['class' => 'btn btn-info']) !!}
-     {{--ボタンはとりあえずこれで。後でデザインは考える--}}
 @endif
 @endsection
