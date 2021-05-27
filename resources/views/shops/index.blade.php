@@ -4,7 +4,7 @@
 @if(Auth::check())
     <h1>登録店一覧</h1>
     <div class="mt-4 mb-4">
-        //カテゴリー一覧を表示
+        {{--カテゴリー一覧を表示--}}
         @foreach($categories as $id => $name)
         <span class="btn"><a href="{{ route('shops.index', ['id'=>$id]) }}" title="{{ $name }}">{{ $name }}</a></span>
         @endforeach
