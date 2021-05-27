@@ -22,9 +22,11 @@ class ShopsController extends Controller
             $user = \Auth::user();
             // ユーザの投稿の一覧を作成日時の降順で取得
             $shops = $user->shops()->orderBy('created_at', 'desc')->paginate(10);
+            $categories = \App\Category::orderBy('id','asc')->pluck('name', 'name');
             $data = [
                 'user' => $user,
                 'shops' => $shops,
+                'categories' => $categories,
             ];
         }
         // Welcomeビューでそれらを表示
