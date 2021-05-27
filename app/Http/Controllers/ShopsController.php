@@ -20,11 +20,12 @@ class ShopsController extends Controller
         if (\Auth::check()) { // 認証済みの場合
             // 認証済みユーザを取得
             $user = \Auth::user();
-            $categories = \App\Category::orderBy('id','asc')->pluck('name', 'name');
+            $categories = \App\Category::orderBy('id','asc')->pluck('name', 'id');
            
          $id = $request->id;
          if (!is_null($id)) {
-            $shops = $user->shops()->where('id', $id)->orderBy('created_at', 'desc')->paginate(10);
+            $category = \App\Category::where('id', $id)->pluck('name');
+            $shops = $user->shops()->where('category', $category)->orderBy('created_at', 'desc')->paginate(10);
             }
          else {
             // ユーザの投稿の一覧を作成日時の降順で取得
