@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Shop;    // Shopモデルを参照する
+use App\Shop, App\Category;    // Shopモデル、Categoryモデルを参照する
 
 class ShopsController extends Controller
 {
