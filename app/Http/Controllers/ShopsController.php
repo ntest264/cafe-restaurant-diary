@@ -37,6 +37,7 @@ class ShopsController extends Controller
                 'shops' => $shops,
                 'categories' => $categories,
                 'id' => $id,
+                'name' => $name,
             
             ];
         }
