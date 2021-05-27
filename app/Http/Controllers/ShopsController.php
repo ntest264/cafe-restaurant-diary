@@ -48,10 +48,10 @@ class ShopsController extends Controller
             'shop' => $shop,
         ]);
         
-        $category = new Category;
-        $categories = $category->getLists()->prepend('選択してください', '');
- 
-        return view('shops.create', ['categories' => $categories]);
+         $categories = \App\Category::orderBy('id','asc')->pluck('name', 'id');
+         $categories = $categories -> prepend('選択してください', '');
+
+        return view('shops.create')->with(['categories' => $categories]);
     }
 
     /**
@@ -127,12 +127,6 @@ class ShopsController extends Controller
         return view('shops.edit', [
             'shop' => $shop,
         ]);
-        
-        $category = new Category;
-        $categories = $category->getLists();
- 
-        $shop = Shop::findOrFail($id);
-        return view('shops.edit', ['shop' => $shop, 'categories' => $categories]);
         
         }
         // トップページへリダイレクトさせる

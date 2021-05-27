@@ -8,7 +8,6 @@
 {{--フォームを開始--}}
             {{--第一引数に対象となるModelのインスタンスを取り、第二引数は連想配列を取る: 'route' => ルーティング名 --}}
             {!! Form::model($shop, ['route' => 'shops.store']) !!}
-
                 <div class="form-group row">
                     {{--第一引数に Form::modelで指定されていたShopモデルのインスタンスである $shop のカラム（この場合 'catrgory' カラム）--}}
                     {{--第二引数にラベル名--}}
@@ -28,7 +27,7 @@
                     {!! Form::label('category', 'カテゴリー') !!}
                     </div>
                     <div class="col-sm-6">
-                    {!! Form::select('category_id', $categories, null,['class' => 'form', 'id' => 'category_id']) !!}
+                   {{ Form::select('category_id', $categories, null, ['class' => 'form', 'id' => 'category_id']) }}
                     </div>
                 </div>
                 <div class="form-group row">
