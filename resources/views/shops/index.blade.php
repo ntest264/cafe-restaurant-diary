@@ -7,7 +7,7 @@
         @foreach($categories as $id => $name)
         <span class="btn"><a href="{{ route('shops.index', ['id'=>$id]) }}" title="{{ $name }}">{{ $name }}</a></span>
         @endforeach
-       {{ $shops->appends(['id' => $id])->links() }}
+       {{ $shops->appends(['name' => $name])->links() }}
        </div>
     {{-- お店情報登録ページへのリンク --}}
      {{--引数は順にルーティング名・リンクにしたい文字列・URL内のパラメータに代入したい値を配列形式で指定（今回は不要なので空っぽ）・HTMLタグの属性を配列形式で指定（Boostrapのボタンとして表示するためのクラス指定）--}}
